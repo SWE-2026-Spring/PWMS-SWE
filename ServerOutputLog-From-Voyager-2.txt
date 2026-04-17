@@ -1,0 +1,3 @@
+2026.04.15  09:01:31  Server Created. Port: 1002
+2026.04.15  09:01:31  Server Started
+2026.04.15  09:01:31  Connecting -- waiting for client on port  1002
