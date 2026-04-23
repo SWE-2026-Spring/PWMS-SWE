@@ -8,6 +8,8 @@ public class Authenticate
    private static ACSInterface aC = null;
    private static AASInterface aS = null;
 
+   private static AccessControlList acC = AccessControlList.Instance();
+
    public Authenticate()
    {
       if (aC == null) aC = new ACSConnector();
@@ -39,7 +41,8 @@ public class Authenticate
          // Replace the following line
          // with authentication code.
          //
-         final boolean auth = false;
+
+         final boolean auth = acC.find(uN1,pw1,enum1,role1);
          //
          if (auth == false)
          {
