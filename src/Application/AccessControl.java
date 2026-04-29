@@ -9,7 +9,7 @@ public class AccessControl
 {
    private static AccessControlList acL;
 
-   public static void main()
+   public static void main(String[] args)
    {
       acL = AccessControlList.Instance();
       AccessControl aC = new AccessControl();
