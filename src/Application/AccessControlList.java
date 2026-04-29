@@ -275,7 +275,6 @@ public class AccessControlList
       for (ACSRecord a : aList)
       {
          final String s = a.getUserName();
-         System.out.println("  user:  [" + s + "] == [" + uName + "] ? " + s.equals(uName));
          if (s.equals(uName)) return true;
       }
       return false;
@@ -292,10 +291,6 @@ public class AccessControlList
       ACSRecord b = new ACSRecord(uName,password,se,sr);
       for (ACSRecord a : aList)
       {
-         System.out.println("  user:  [" + a.getUserName() + "] == [" + uName     + "] ? " + a.getUserName().equals(uName));
-         System.out.println("  pass:  [" + a.getPassword() + "] == [" + password  + "] ? " + a.getPassword().equals(password));
-         System.out.println("  subsys:[" + a.getSubsys()   + "] == [" + se        + "] ? " + (a.getSubsys() == se));
-         System.out.println("  role:  [" + a.getRole()     + "] == [" + sr        + "] ? " + (a.getRole()   == sr));
          if (a.equals(b)) return true;
       }
       return false;
