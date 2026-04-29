@@ -3,7 +3,7 @@ import Presentation.*;
 
 public class Authenticate
 {
-   private static boolean DBG = false;
+   private static boolean DBG = true;
 
    private static ACSInterface aC = null;
    private static AASInterface aS = null;
@@ -36,11 +36,7 @@ public class Authenticate
          final SubsystemRoles role1 = aC.getRole();
          final SubsystemEnums enum1 = aC.getDest();
          if (DBG) dumpVals(uN1, pw1, role1, enum1);
-         //
-         // Authentication is done here
-         // Replace the following line
-         // with authentication code.
-         //
+         if (DBG) acC.dump();
 
          final boolean auth = acC.find(uN1,pw1,enum1,role1);
          //
