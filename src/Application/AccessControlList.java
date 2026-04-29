@@ -290,7 +290,13 @@ public class AccessControlList
    {
       ACSRecord b = new ACSRecord(uName,password,se,sr);
       for (ACSRecord a : aList)
+      {
+         System.out.println("  user:  [" + a.getUserName() + "] == [" + uName     + "] ? " + a.getUserName().equals(uName));
+         System.out.println("  pass:  [" + a.getPassword() + "] == [" + password  + "] ? " + a.getPassword().equals(password));
+         System.out.println("  subsys:[" + a.getSubsys()   + "] == [" + se        + "] ? " + (a.getSubsys() == se));
+         System.out.println("  role:  [" + a.getRole()     + "] == [" + sr        + "] ? " + (a.getRole()   == sr));
          if (a.equals(b)) return true;
+      }
       return false;
    }
 
