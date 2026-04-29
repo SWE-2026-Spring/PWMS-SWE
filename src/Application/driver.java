@@ -4,35 +4,17 @@ import Presentation.*;
 
 public class driver
 {
-   static public void main()
+   static public void main(String[] args)
    {
+      new java.io.File("ACS.dat").delete();
 
-      AccessControlList.chgSAPass("xyz");
       AccessControlList cf = AccessControlList.Instance();
 
-    //  cf.dump();
+      cf.addUser("Bill", "password", SubsystemEnums.DAS, SubsystemRoles.DATAANALYST);
+      cf.addUser("Joe",  "JoePass",  SubsystemEnums.DGS, SubsystemRoles.DATAGATHERER);
+      cf.addUser("Mary", "MaryPass", SubsystemEnums.AAS, SubsystemRoles.AUDITOR);
+      cf.addUser("Amy",  "AmyPass",  SubsystemEnums.AAS, SubsystemRoles.WATCHMAN);
 
-      cf.addUser  ("Bill", "MyPass", SubsystemEnums.TST, SubsystemRoles.SYSTEMADMIN);
-      cf.addUser("Joe", "joePass", SubsystemEnums.DAS, SubsystemRoles.DATAANALYST);
-
-      boolean b = cf.find("Bill", "MyPass", SubsystemEnums.TST, SubsystemRoles.SYSTEMADMIN);
-
-      if (b) System.out.println("Record was found");
-      else  System.out.println("Record was NOT found");
-
-      int nu = cf.getNumUsers();
-
-      cf.dump();
-
-      cf.deleteUser("Bill");
-
-      cf.dump();
-
-      cf.deleteUser("Joe","joePass",SubsystemEnums.DAS,SubsystemRoles.DATAANALYST);
-
-      cf.addUser("Joe2", "joePass", SubsystemEnums.DAS, SubsystemRoles.DATAANALYST);
-
-      nu = cf.getNumUsers();
       cf.dump();
    }
 }
