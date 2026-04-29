@@ -275,6 +275,7 @@ public class AccessControlList
       for (ACSRecord a : aList)
       {
          final String s = a.getUserName();
+         System.out.println("  user:  [" + s + "] == [" + uName + "] ? " + s.equals(uName));
          if (s.equals(uName)) return true;
       }
       return false;
