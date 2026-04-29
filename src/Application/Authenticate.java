@@ -36,7 +36,6 @@ public class Authenticate
          final SubsystemRoles role1 = aC.getRole();
          final SubsystemEnums enum1 = aC.getDest();
          if (DBG) dumpVals(uN1, pw1, role1, enum1);
-         if (DBG) acC.dump();
 
          final boolean auth = acC.find(uN1,pw1,enum1,role1);
          //
